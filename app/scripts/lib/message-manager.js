@@ -1,10 +1,10 @@
 import EventEmitter from 'events';
 import { ObservableStore } from '@metamask/obs-store';
-import { bufferToHex } from 'ethereumjs-util';
+import ethUtil from 'ethereumjs-util';
 import { ethErrors } from 'eth-rpc-errors';
 import { MESSAGE_TYPE } from '../../../shared/constants/app';
 import { METAMASK_CONTROLLER_EVENTS } from '../metamask-controller';
-import createId from '../../../shared/modules/random-id';
+import createId from './random-id';
 
 /**
  * Represents, and contains data about, an 'eth_sign' type signature request. These are created when a signature for
@@ -298,5 +298,5 @@ function normalizeMsgData(data) {
     return data;
   }
   // data is unicode, convert to hex
-  return bufferToHex(Buffer.from(data, 'utf8'));
+  return ethUtil.bufferToHex(Buffer.from(data, 'utf8'));
 }

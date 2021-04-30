@@ -1,4 +1,4 @@
-import stringify from 'fast-safe-stringify';
+import { cloneDeep } from 'lodash';
 import { CAVEAT_NAMES } from '../../../../shared/constants/permissions';
 import {
   HISTORY_STORE_KEY,
@@ -151,7 +151,7 @@ export default class PermissionsLogController {
         ? LOG_METHOD_TYPES.internal
         : LOG_METHOD_TYPES.restricted,
       origin: request.origin,
-      request: stringify(request, null, 2),
+      request: cloneDeep(request),
       requestTime: Date.now(),
       response: null,
       responseTime: null,
@@ -174,7 +174,7 @@ export default class PermissionsLogController {
       return;
     }
 
-    entry.response = stringify(response, null, 2);
+    entry.response = cloneDeep(response);
     entry.responseTime = time;
     entry.success = !response.error;
   }

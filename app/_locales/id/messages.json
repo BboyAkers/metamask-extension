@@ -43,6 +43,9 @@
   "activityLog": {
     "message": "log aktivitas"
   },
+  "addAccount": {
+    "message": "Tambahkan akun"
+  },
   "addAcquiredTokens": {
     "message": "Tambahkan token yang Anda peroleh menggunakan MetaMask"
   },
@@ -116,6 +119,10 @@
   },
   "amount": {
     "message": "Jumlah"
+  },
+  "amountInEth": {
+    "message": "$1 ETH",
+    "description": "Displays an eth amount to the user. $1 is a decimal number"
   },
   "amountWithColon": {
     "message": "Jumlah:"
@@ -491,6 +498,9 @@
   "done": {
     "message": "Selesai"
   },
+  "dontHaveAHardwareWallet": {
+    "message": "Tidak punya dompet perangkat keras?"
+  },
   "dontShowThisAgain": {
     "message": "Jangan tampilkan ini lagi"
   },
@@ -715,6 +725,9 @@
     "message": "Dapatkan Ether dari keran untuk $1",
     "description": "Displays network name for Ether faucet"
   },
+  "getHelp": {
+    "message": "Dapatkan Bantuan."
+  },
   "getStarted": {
     "message": "Persiapan."
   },
@@ -735,6 +748,9 @@
   },
   "hardwareWalletsMsg": {
     "message": "Pilih dompet perangkat keras yang ingin Anda gunakan dengan MetaMask"
+  },
+  "havingTroubleConnecting": {
+    "message": "Ada masalah saat menghubungkan?"
   },
   "here": {
     "message": "di sini",
@@ -769,12 +785,21 @@
   "importAccountSeedPhrase": {
     "message": "Impor akun dengan frasa pemulihan"
   },
+  "importUsingSeed": {
+    "message": "Impor menggunakan frasa pemulihan akun"
+  },
   "importWallet": {
     "message": "Impor dompet"
+  },
+  "importYourExisting": {
+    "message": "Impor dompet Anda yang ada menggunakan frasa pemulihan 12 kata"
   },
   "imported": {
     "message": "Diimpor",
     "description": "status showing that an account has been fully loaded into the keyring"
+  },
+  "infoHelp": {
+    "message": "Informasi & Bantuan"
   },
   "initialTransactionConfirmed": {
     "message": "Transaksi awal Anda dikonfirmasikan oleh jaringan. Klik Oke untuk kembali."
@@ -963,6 +988,12 @@
   "myAccounts": {
     "message": "Akun Saya"
   },
+  "myWalletAccounts": {
+    "message": "Akun Dompet Saya"
+  },
+  "myWalletAccountsDescription": {
+    "message": "Semua akun Anda yang dibuat MetaMask akan secara otomatis ditambahkan ke bagian ini."
+  },
   "needEtherInWallet": {
     "message": "Untuk berinteraksi dengan aplikasi yang terdesentralisasi menggunakan MetaMask, Anda memerlukan Ether di dompet Anda."
   },
@@ -1099,6 +1130,9 @@
   "optionalCurrencySymbol": {
     "message": "Simbol Mata Uang (opsional)"
   },
+  "orderOneHere": {
+    "message": "Pesan Trezor atau Ledger dan simpan dana Anda di penyimpanan dingin"
+  },
   "origin": {
     "message": "Asal"
   },
@@ -1180,6 +1214,9 @@
   "readdToken": {
     "message": "Anda dapat menambahkan token ini kembali di masa mendatang dengan membuka “Tambahkan token” di menu opsi akun Anda."
   },
+  "readyToConnect": {
+    "message": "Siap untuk Terhubung?"
+  },
   "receive": {
     "message": "Terima"
   },
@@ -1239,6 +1276,9 @@
   },
   "restoreAccountWithSeed": {
     "message": "Memulihkan Akun dengan Frasa Pemulihan"
+  },
+  "restoreFromSeed": {
+    "message": "Pulihkan akun?"
   },
   "restoreWalletPreferences": {
     "message": "Cadangan data Anda dari $1 telah ditemukan. Apakah Anda ingin memulihkan preferensi dompet Anda?",
@@ -1310,6 +1350,9 @@
   "secretBackupPhraseWarning": {
     "message": "PERINGATAN: Jangan pernah ungkapkan frasa cadangan Anda. Siapa pun yang memiliki frasa ini dapat mengambil Ether Anda selamanya."
   },
+  "secretPhrase": {
+    "message": "Masukkan frasa kata dua belas rahasia Anda di sini untuk memulihkan vault Anda."
+  },
   "securityAndPrivacy": {
     "message": "Keamanan & Privasi"
   },
@@ -1360,6 +1403,9 @@
   },
   "sendAmount": {
     "message": "Kirim Jumlah"
+  },
+  "sendETH": {
+    "message": "Kirim ETH"
   },
   "sendSpecifiedTokens": {
     "message": "Kirim $1",
@@ -1480,6 +1526,24 @@
   "statusNotConnected": {
     "message": "Tidak terhubung"
   },
+  "step1HardwareWallet": {
+    "message": "1. Hubungkan Dompet Perangkat Keras"
+  },
+  "step1HardwareWalletMsg": {
+    "message": "Hubungkan dompet perangkat keras Anda langsung ke komputer."
+  },
+  "step2HardwareWallet": {
+    "message": "2. Pilih Akun"
+  },
+  "step2HardwareWalletMsg": {
+    "message": "Pilih akun yang ingin Anda lihat. Anda hanya dapat memilih satu pada satu waktu."
+  },
+  "step3HardwareWallet": {
+    "message": "3. Mulai menggunakan situs web3 dan lainnya!"
+  },
+  "step3HardwareWalletMsg": {
+    "message": "Gunakan akun perangkat keras Anda seperti yang akan Anda lakukan dengan akun Ethereum lainnya. Hubungkan ke situs web3, kirim ETH, beli dan simpan token ERC20 dan token yang tidak dapat dipertukarkan seperti CryptoKitties."
+  },
   "storePhrase": {
     "message": "Simpan frasa ini dalam pengelola kata sandi seperti 1Password."
   },
@@ -1567,6 +1631,24 @@
   "swapHighSlippageWarning": {
     "message": "Jumlah slippage sangat tinggi. Pastikan Anda mengetahui yang Anda kerjakan!"
   },
+  "swapIntroLearnMoreHeader": {
+    "message": "Ingin mempelajari selengkapnya?"
+  },
+  "swapIntroLearnMoreLink": {
+    "message": "Pelajari selengkapnya tentang Penukaran MetaMask"
+  },
+  "swapIntroLiquiditySourcesLabel": {
+    "message": "Sumber likuiditas mencakup:"
+  },
+  "swapIntroPopupSubTitle": {
+    "message": "Sekarang, Anda bisa menukar token secara langsung di dompet MetaMask Anda. Penukaran MetaMask menggabungkan beberapa agregator penukaran terdesentralisasi, pembuat pasar profesional, dan DEX individu untuk memastikan pengguna MetaMask selalu mendapatkan harga terbaik dengan biaya jaringan terendah."
+  },
+  "swapIntroPopupTitle": {
+    "message": "Penukaran token ada di sini!"
+  },
+  "swapLearnMoreContractsAuditReview": {
+    "message": "Tinjau audit kontrak resmi kami"
+  },
   "swapLowSlippageError": {
     "message": "Transaksi bisa gagal, slippage maks. terlalu rendah."
   },
@@ -1588,7 +1670,7 @@
     "description": "Provides information about the fee that metamask takes for swaps. $1 is a decimal number."
   },
   "swapNetworkFeeSummary": {
-    "message": "Biaya jaringan mencakup biaya pemrosesan penukaran Anda dan menyimpannya di jaringan $1. MetaMask tidak mendapatkan keuntungan dari biaya ini."
+    "message": "Biaya jaringan mencakup biaya pemrosesan penukaran Anda dan menyimpannya di jaringan Ethereum. MetaMask tidak mendapatkan keuntungan dari biaya ini."
   },
   "swapNewQuoteIn": {
     "message": "Kuota baru di $1",
@@ -1669,6 +1751,9 @@
   "swapSourceInfo": {
     "message": "Kami mencari beberapa sumber likuiditas (penukaran, agregator, dan pembuat pasar profesional) untuk menemukan tarif terbaik dan biaya jaringan terendah."
   },
+  "swapStartSwapping": {
+    "message": "Mulai menukar"
+  },
   "swapSwapFrom": {
     "message": "Tukar dari"
   },
@@ -1696,8 +1781,7 @@
     "message": "Tidak diketahui"
   },
   "swapVerifyTokenExplanation": {
-    "message": "Beberapa token dapat menggunakan simbol dan nama yang sama. Periksa $1 untuk memverifikasi inilah token yang Anda cari.",
-    "description": "This appears in a tooltip next to the verifyThisTokenOn message. It gives the user more information about why they should check the token on a block explorer. $1 will be the name or url of the block explorer, which will be the translation of 'etherscan' or a block explorer url specified for a custom network."
+    "message": "Beberapa token dapat menggunakan simbol dan nama yang sama. Periksa Etherscan untuk memverifikasi inilah token yang Anda cari."
   },
   "swapViewToken": {
     "message": "Lihat $1"
@@ -1797,6 +1881,9 @@
   },
   "tokenContractAddress": {
     "message": "Alamat Kontrak Token"
+  },
+  "tokenOptions": {
+    "message": "Opsi token"
   },
   "tokenSymbol": {
     "message": "Simbol Token"

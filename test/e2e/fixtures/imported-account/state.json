@@ -1,7 +1,8 @@
 {
   "data": {
     "AppStateController": {
-      "mkrMigrationReminderTimestamp": null
+      "mkrMigrationReminderTimestamp": null,
+      "swapsWelcomeMessageHasBeenShown": true
     },
     "CachedBalancesController": {
       "cachedBalances": {
@@ -34,19 +35,6 @@
         "chainId": "0x539",
         "ticker": "ETH",
         "type": "rpc"
-      }
-    },
-    "NotificationController": {
-      "notifications": {
-        "1": {
-          "isShown": true
-        },
-        "2": {
-          "isShown": true
-        },
-        "3": {
-          "isShown": true
-        }
       }
     },
     "OnboardingController": {

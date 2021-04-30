@@ -26,8 +26,7 @@ module.exports = {
     'test-*/**',
     'docs/**',
     'coverage/',
-    'jest-coverage/',
-    'development/chromereload.js',
+    'app/scripts/chromereload.js',
     'app/vendor/**',
     'test/e2e/send-eth-with-private-key-test/**',
     'nyc_output/**',
@@ -37,11 +36,13 @@ module.exports = {
 
   extends: [
     '@metamask/eslint-config',
-    '@metamask/eslint-config-nodejs',
-    'prettier',
+    '@metamask/eslint-config/config/nodejs',
+    '@metamask/eslint-config/config/mocha',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
   ],
 
-  plugins: ['@babel', 'import', 'prettier'],
+  plugins: ['@babel', 'react', 'import', 'prettier'],
 
   globals: {
     document: 'readonly',
@@ -49,18 +50,102 @@ module.exports = {
   },
 
   rules: {
-    'default-param-last': 'off',
-    'prefer-object-spread': 'error',
-    'require-atomic-updates': 'off',
+    // Prettier changes and reasoning
 
+    'prettier/prettier': 'error',
+
+    // Our eslint config has the default setting for this as error. This
+    // include beforeBlockComment: true, but in order to match the prettier
+    // spec you have to enable before and after blocks, objects and arrays
+    // https://github.com/prettier/eslint-config-prettier#lines-around-comment
+    'lines-around-comment': [
+      'error',
+      {
+        beforeBlockComment: true,
+        afterLineComment: false,
+        allowBlockStart: true,
+        allowBlockEnd: true,
+        allowObjectStart: true,
+        allowObjectEnd: true,
+        allowArrayStart: true,
+        allowArrayEnd: true,
+      },
+    ],
+    // Prettier has some opinions on mixed-operators, and there is ongoing work
+    // to make the output code clear. It is better today then it was when the first
+    // PR to add prettier. That being said, the workaround for keeping this rule enabled
+    // requires breaking parts of operations into different variables -- which I believe
+    // to be worse. https://github.com/prettier/eslint-config-prettier#no-mixed-operators
+    'no-mixed-operators': 'off',
+    // Prettier wraps single line functions with ternaries, etc in parens by default, but
+    // if the line is long enough it breaks it into a separate line and removes the parens.
+    // The second behavior conflicts with this rule. There is some guides on the repo about
+    // how you can keep it enabled:
+    // https://github.com/prettier/eslint-config-prettier#no-confusing-arrow
+    // However, in practice this conflicts with prettier adding parens around short lines,
+    // when autofixing in vscode and others.
+    'no-confusing-arrow': 'off',
+    // There is no configuration in prettier for how it stylizes regexes, which conflicts
+    // with wrap-regex.
+    'wrap-regex': 'off',
+    // Prettier handles all indentation automagically. it can be configured here
+    // https://prettier.io/docs/en/options.html#tab-width but the default matches our
+    // style.
+    indent: 'off',
+    // This rule conflicts with the way that prettier breaks code across multiple lines when
+    // it exceeds the maximum length. Prettier optimizes for readability while simultaneously
+    // maximizing the amount of code per line.
+    'function-paren-newline': 'off',
+    // This rule throws an error when there is a line break in an arrow function declaration
+    // but prettier breaks arrow function declarations to be as readable as possible while
+    // still conforming to the width rules.
+    'implicit-arrow-linebreak': 'off',
+    // This rule would result in an increase in white space in lines with generator functions,
+    // which impacts prettier's goal of maximizing code per line and readability. There is no
+    // current workaround.
+    'generator-star-spacing': 'off',
+    'default-param-last': 'off',
+    'require-atomic-updates': 'off',
     'import/no-unassigned-import': 'off',
+    'prefer-object-spread': 'error',
+    'react/no-unused-prop-types': 'error',
+    'react/no-unused-state': 'error',
+    'react/jsx-boolean-value': 'error',
+    'react/jsx-curly-brace-presence': [
+      'error',
+      { props: 'never', children: 'never' },
+    ],
+    'react/jsx-equals-spacing': 'error',
+    'react/no-deprecated': 'error',
+    'react/default-props-match-prop-types': 'error',
+    'react/jsx-closing-tag-location': [
+      'error',
+      { selfClosing: 'tag-aligned', nonEmpty: 'tag-aligned' },
+    ],
+    'react/jsx-no-duplicate-props': 'error',
+    'react/jsx-closing-bracket-location': 'error',
+    'react/jsx-first-prop-new-line': ['error', 'multiline'],
+    'react/jsx-max-props-per-line': [
+      'error',
+      { maximum: 1, when: 'multiline' },
+    ],
+    'react/jsx-tag-spacing': [
+      'error',
+      {
+        closingSlash: 'never',
+        beforeSelfClosing: 'always',
+        afterOpening: 'never',
+      },
+    ],
 
     'no-invalid-this': 'off',
     '@babel/no-invalid-this': 'error',
 
-    // Prettier handles this
+    // prettier handles these
+    semi: 'off',
     '@babel/semi': 'off',
 
+    'mocha/no-setup-in-describe': 'off',
     'node/no-process-env': 'off',
 
     // TODO: re-enable these rules
@@ -70,28 +155,9 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['ui/**/*.js', 'test/lib/render-helpers.js', 'test/jest/*.js'],
-      plugins: ['react'],
-      extends: ['plugin:react/recommended', 'plugin:react-hooks/recommended'],
-      rules: {
-        'react/no-unused-prop-types': 'error',
-        'react/no-unused-state': 'error',
-        'react/jsx-boolean-value': 'error',
-        'react/jsx-curly-brace-presence': [
-          'error',
-          { props: 'never', children: 'never' },
-        ],
-        'react/no-deprecated': 'error',
-        'react/default-props-match-prop-types': 'error',
-        'react/jsx-no-duplicate-props': 'error',
-      },
-    },
-    {
-      files: ['test/e2e/**/*.spec.js'],
-      extends: ['@metamask/eslint-config-mocha'],
+      files: ['test/e2e/**/*.js'],
       rules: {
         'mocha/no-hooks-for-single-case': 'off',
-        'mocha/no-setup-in-describe': 'off',
       },
     },
     {
@@ -107,38 +173,14 @@ module.exports = {
       },
     },
     {
-      files: ['**/*.test.js'],
-      excludedFiles: ['ui/**/*.test.js', 'ui/__mocks__/*.js'],
-      extends: ['@metamask/eslint-config-mocha'],
+      files: ['test/**/*-test.js', 'test/**/*.spec.js'],
       rules: {
-        'mocha/no-setup-in-describe': 'off',
+        // Mocha will re-assign `this` in a test context
+        '@babel/no-invalid-this': 'off',
       },
     },
     {
-      files: ['**/__snapshots__/*.snap'],
-      plugins: ['jest'],
-      rules: {
-        'jest/no-large-snapshots': [
-          'error',
-          { maxSize: 50, inlineMaxSize: 50 },
-        ],
-      },
-    },
-    {
-      files: ['ui/**/*.test.js', 'ui/__mocks__/*.js'],
-      extends: ['@metamask/eslint-config-jest'],
-      rules: {
-        'jest/no-restricted-matchers': 'off',
-        'import/unambiguous': 'off',
-        'import/named': 'off',
-      },
-    },
-    {
-      files: [
-        'development/**/*.js',
-        'test/e2e/benchmark.js',
-        'test/helpers/setup-helper.js',
-      ],
+      files: ['development/**/*.js', 'test/e2e/benchmark.js', 'test/helper.js'],
       rules: {
         'node/no-process-exit': 'off',
         'node/shebang': 'off',
@@ -156,7 +198,6 @@ module.exports = {
         'test/lib/wait-until-called.js',
         'test/env.js',
         'test/setup.js',
-        'jest.config.js',
       ],
       parserOptions: {
         sourceType: 'script',
