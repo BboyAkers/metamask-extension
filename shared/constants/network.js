@@ -10,12 +10,15 @@ export const ROPSTEN_NETWORK_ID = '3';
 export const RINKEBY_NETWORK_ID = '4';
 export const GOERLI_NETWORK_ID = '5';
 export const KOVAN_NETWORK_ID = '42';
+export const LOCALHOST_NETWORK_ID = '1337';
 
 export const MAINNET_CHAIN_ID = '0x1';
 export const ROPSTEN_CHAIN_ID = '0x3';
 export const RINKEBY_CHAIN_ID = '0x4';
 export const GOERLI_CHAIN_ID = '0x5';
 export const KOVAN_CHAIN_ID = '0x2a';
+export const LOCALHOST_CHAIN_ID = '0x539';
+export const BSC_CHAIN_ID = '0x38';
 
 /**
  * The largest possible chain ID we can handle.
@@ -28,6 +31,15 @@ export const RINKEBY_DISPLAY_NAME = 'Rinkeby';
 export const KOVAN_DISPLAY_NAME = 'Kovan';
 export const MAINNET_DISPLAY_NAME = 'Ethereum Mainnet';
 export const GOERLI_DISPLAY_NAME = 'Goerli';
+
+export const ETH_SYMBOL = 'ETH';
+export const WETH_SYMBOL = 'WETH';
+export const TEST_ETH_SYMBOL = 'TESTETH';
+export const BNB_SYMBOL = 'BNB';
+
+export const ETH_TOKEN_IMAGE_URL = './images/eth_logo.svg';
+export const TEST_ETH_TOKEN_IMAGE_URL = './images/black-eth-logo.svg';
+export const BNB_TOKEN_IMAGE_URL = './images/bnb.png';
 
 export const INFURA_PROVIDER_TYPES = [ROPSTEN, RINKEBY, KOVAN, MAINNET, GOERLI];
 
@@ -79,3 +91,11 @@ export const CHAIN_ID_TO_NETWORK_ID_MAP = Object.values(
   chainIdToNetworkIdMap[chainId] = networkId;
   return chainIdToNetworkIdMap;
 }, {});
+
+export const NATIVE_CURRENCY_TOKEN_IMAGE_MAP = {
+  [ETH_SYMBOL]: ETH_TOKEN_IMAGE_URL,
+  [TEST_ETH_SYMBOL]: TEST_ETH_TOKEN_IMAGE_URL,
+  [BNB_SYMBOL]: BNB_TOKEN_IMAGE_URL,
+};
+
+export const INFURA_BLOCKED_KEY = 'countryBlocked';

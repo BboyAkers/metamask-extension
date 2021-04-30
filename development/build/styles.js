@@ -18,8 +18,8 @@ function createStyleTasks({ livereload }) {
   const prod = createTask(
     'styles:prod',
     createScssBuildTask({
-      src: 'ui/app/css/index.scss',
-      dest: 'ui/app/css/output',
+      src: 'ui/css/index.scss',
+      dest: 'ui/css/output',
       devMode: false,
     }),
   );
@@ -27,15 +27,15 @@ function createStyleTasks({ livereload }) {
   const dev = createTask(
     'styles:dev',
     createScssBuildTask({
-      src: 'ui/app/css/index.scss',
-      dest: 'ui/app/css/output',
+      src: 'ui/css/index.scss',
+      dest: 'ui/css/output',
       devMode: true,
-      pattern: 'ui/app/**/*.scss',
+      pattern: 'ui/**/*.scss',
     }),
   );
 
   const lint = createTask('lint-scss', function () {
-    return gulp.src('ui/app/css/itcss/**/*.scss').pipe(
+    return gulp.src('ui/css/itcss/**/*.scss').pipe(
       gulpStylelint({
         reporters: [{ formatter: 'string', console: true }],
         fix: true,
@@ -68,7 +68,7 @@ function createStyleTasks({ livereload }) {
 async function buildScssPipeline(src, dest, devMode, rtl) {
   if (!sass) {
     // eslint-disable-next-line node/global-require
-    sass = require('gulp-sass');
+    sass = require('gulp-dart-sass');
     // use our own compiler which runs sass in its own process
     // in order to not pollute the intrinsics
     // eslint-disable-next-line node/global-require

@@ -43,9 +43,6 @@
   "activityLog": {
     "message": "アクティビティのログ"
   },
-  "addAccount": {
-    "message": "アカウントの追加"
-  },
   "addAcquiredTokens": {
     "message": "MetaMaskで取得したトークンを追加する"
   },
@@ -125,10 +122,6 @@
   },
   "amount": {
     "message": "金額"
-  },
-  "amountInEth": {
-    "message": "$1 ETH",
-    "description": "Displays an eth amount to the user. $1 is a decimal number"
   },
   "amountWithColon": {
     "message": "金額:"
@@ -507,9 +500,6 @@
   "done": {
     "message": "完了"
   },
-  "dontHaveAHardwareWallet": {
-    "message": "ハードウェアウォレットをお持ちではありませんか?"
-  },
   "dontShowThisAgain": {
     "message": "再度表示しない"
   },
@@ -734,9 +724,6 @@
     "message": "$1 のFaucetでEtherを得ることができます。",
     "description": "Displays network name for Ether faucet"
   },
-  "getHelp": {
-    "message": "サポートを受ける。"
-  },
   "getStarted": {
     "message": "はじめる"
   },
@@ -757,9 +744,6 @@
   },
   "hardwareWalletsMsg": {
     "message": "MetaMaskに接続するハードウェアウォレットを選択してください"
-  },
-  "havingTroubleConnecting": {
-    "message": "接続に問題がありますか?"
   },
   "here": {
     "message": "こちら",
@@ -794,21 +778,12 @@
   "importAccountSeedPhrase": {
     "message": "シードフレーズを使用してアカウントをインポート"
   },
-  "importUsingSeed": {
-    "message": "アカウントのシードフレーズから復元する"
-  },
   "importWallet": {
     "message": "ウォレットのインポート"
-  },
-  "importYourExisting": {
-    "message": "12単語のシードフレーズを使用して既存のウォレットをインポートします"
   },
   "imported": {
     "message": "インポート済",
     "description": "status showing that an account has been fully loaded into the keyring"
-  },
-  "infoHelp": {
-    "message": "情報とヘルプ"
   },
   "initialTransactionConfirmed": {
     "message": "最初のトランザクションがネットワークに確認されました。戻るにはOKをクリックします。"
@@ -1000,12 +975,6 @@
   "myAccounts": {
     "message": "マイアカウント"
   },
-  "myWalletAccounts": {
-    "message": "このウォレットのアカウント"
-  },
-  "myWalletAccountsDescription": {
-    "message": "MetaMaskで作成したすべてのアカウントは、このセクションに自動的に追加されます。"
-  },
   "needEtherInWallet": {
     "message": "MetaMaskで分散型アプリケーションを操作するには、ウォレットにEtherが必要です。"
   },
@@ -1139,9 +1108,6 @@
   "optionalCurrencySymbol": {
     "message": "通貨シンボル(オプション)"
   },
-  "orderOneHere": {
-    "message": "Trezor又はLedgerを注文して資金をコールドストレージに保管できます"
-  },
   "origin": {
     "message": "要求元"
   },
@@ -1223,9 +1189,6 @@
   "readdToken": {
     "message": "アカウントオプションのメニューで\"トークンの追加\"を選択すると、後でこのトークンを戻すことができます。"
   },
-  "readyToConnect": {
-    "message": "接続準備はよろしいですか?"
-  },
   "receive": {
     "message": "受け取る"
   },
@@ -1285,9 +1248,6 @@
   },
   "restoreAccountWithSeed": {
     "message": "シードフレーズでアカウントを復元"
-  },
-  "restoreFromSeed": {
-    "message": "アカウントを復元しますか?"
   },
   "restoreWalletPreferences": {
     "message": "$1 のデータバックアップが見つかりました。ウォレットの基本設定を復元しますか?",
@@ -1359,9 +1319,6 @@
   "secretBackupPhraseWarning": {
     "message": "警告:シードフレーズは絶対に公開しないでください。シードフレーズを使うと、誰でもアカウントからETHを盗み出せます。"
   },
-  "secretPhrase": {
-    "message": "アカウント情報を復元するには、12単語で構成されたシードフレーズを入力してください。"
-  },
   "securityAndPrivacy": {
     "message": "セキュリティとプライバシー"
   },
@@ -1412,9 +1369,6 @@
   },
   "sendAmount": {
     "message": "送金額"
-  },
-  "sendETH": {
-    "message": "ETHの送金"
   },
   "sendSpecifiedTokens": {
     "message": "$1 を送る",
@@ -1535,24 +1489,6 @@
   "statusNotConnected": {
     "message": "未接続"
   },
-  "step1HardwareWallet": {
-    "message": "1.ハードウェア ウォレットの接続"
-  },
-  "step1HardwareWalletMsg": {
-    "message": "コンピューターに直接ハードウェアウォレットを接続してください。"
-  },
-  "step2HardwareWallet": {
-    "message": "2.アカウントを選択"
-  },
-  "step2HardwareWalletMsg": {
-    "message": "読取るアカウントを１つ選択します。"
-  },
-  "step3HardwareWallet": {
-    "message": "3.web3を使用してサイトに接続しましょう!"
-  },
-  "step3HardwareWalletMsg": {
-    "message": "Ethereumアカウントと同じように、ハードウェアアカウントを使用します。web3サイトに接続してETH を送金し、ERC20トークンやCryptoKittiesのようなトークンを購入して保管できます。"
-  },
   "storePhrase": {
     "message": "このフレーズを1Passwordのようなパスワードマネージャーに保管てください。"
   },
@@ -1643,24 +1579,6 @@
   "swapHighSlippageWarning": {
     "message": "非常に大きいスリッページ額です。本当に実行するか確認してください。"
   },
-  "swapIntroLearnMoreHeader": {
-    "message": "詳細を表示しますか?"
-  },
-  "swapIntroLearnMoreLink": {
-    "message": "MetaMask Swapsの詳細"
-  },
-  "swapIntroLiquiditySourcesLabel": {
-    "message": "流動性ソースには以下が含まれます。"
-  },
-  "swapIntroPopupSubTitle": {
-    "message": "トークンをMetaMaskで直接スワップできるようになりました。MetaMask Swapsは、多数の分散型取引所アグリゲーター、専門のマーケットメーカー、DEX取引所を統合し、ユーザーは常に最低のネットワーク手数料、最適な価格で取引できます。"
-  },
-  "swapIntroPopupTitle": {
-    "message": "トークンのスワップはこちら!"
-  },
-  "swapLearnMoreContractsAuditReview": {
-    "message": "MetaSwapのコントラクト監査のレビュー"
-  },
   "swapLowSlippageError": {
     "message": "トランザクションが失敗する可能性があります。最大スリッページが少なすぎます。"
   },
@@ -1686,7 +1604,7 @@
     "description": "$1 is the number of quotes that the user can select from when opening the list of quotes on the 'view quote' screen"
   },
   "swapNetworkFeeSummary": {
-    "message": "ネットワーク手数料には、スワップの結果をEthereumネットワークに保管する費用も含まれています。MetaMaskは手数料から利益を得ません。"
+    "message": "ネットワーク手数料には、スワップの結果を$1ネットワークに保管する費用も含まれています。MetaMaskは手数料から利益を得ません。"
   },
   "swapNewQuoteIn": {
     "message": "見積の有効期限 $1",
@@ -1781,9 +1699,6 @@
   "swapSourceInfo": {
     "message": "最良のレートと最小のネットワーク手数料を探すため、複数の流動性ソース(取引所、アグリゲーター、専門のマーケットメーカー)を検索します。"
   },
-  "swapStartSwapping": {
-    "message": "スワップの開始"
-  },
   "swapSwapFrom": {
     "message": "スワップ元"
   },
@@ -1814,7 +1729,8 @@
     "message": "最適な見積を使用する"
   },
   "swapVerifyTokenExplanation": {
-    "message": "複数のトークンが同じ名前とシンボルであることがあります。Etherscanで実際のトークンでを確認してください。"
+    "message": "複数のトークンが同じ名前とシンボルであることがあります。$1で実際のトークンでを確認してください。",
+    "description": "This appears in a tooltip next to the verifyThisTokenOn message. It gives the user more information about why they should check the token on a block explorer. $1 will be the name or url of the block explorer, which will be the translation of 'etherscan' or a block explorer url specified for a custom network."
   },
   "swapViewToken": {
     "message": "$1 を表示"
@@ -1917,9 +1833,6 @@
   },
   "tokenContractAddress": {
     "message": "トークンコントラクトのアドレス"
-  },
-  "tokenOptions": {
-    "message": "トークンのオプション"
   },
   "tokenSymbol": {
     "message": "トークンシンボル"

@@ -66,6 +66,8 @@ export default class PreferencesController {
       completedOnboarding: false,
       // ENS decentralized website resolution
       ipfsGateway: 'dweb.link',
+      infuraBlocked: null,
+      useLedgerLive: false,
       ...opts.initState,
     };
 
@@ -75,6 +77,7 @@ export default class PreferencesController {
     this.openPopup = opts.openPopup;
     this.migrateAddressBookState = opts.migrateAddressBookState;
     this._subscribeToNetworkDidChange();
+    this._subscribeToInfuraAvailability();
 
     global.setPreference = (key, value) => {
       return this.setFeatureFlag(key, value);
@@ -378,7 +381,7 @@ export default class PreferencesController {
    */
   async addToken(rawAddress, symbol, decimals, image) {
     const address = normalizeAddress(rawAddress);
-    const newEntry = { address, symbol, decimals };
+    const newEntry = { address, symbol, decimals: Number(decimals) };
     const { tokens, hiddenTokens } = this.store.getState();
     const assetImages = this.getAssetImages();
     const updatedHiddenTokens = hiddenTokens.filter(
@@ -664,6 +667,24 @@ export default class PreferencesController {
     return Promise.resolve(domain);
   }
 
+  /**
+   * A setter for the `useLedgerLive` property
+   * @param {bool} domain - Value for ledger live support
+   * @returns {Promise<string>} A promise of the update to useLedgerLive
+   */
+  async setLedgerLivePreference(useLedgerLive) {
+    this.store.updateState({ useLedgerLive });
+    return useLedgerLive;
+  }
+
+  /**
+   * A getter for the `useLedgerLive` property
+   * @returns {boolean} User preference of using Ledger Live
+   */
+  getLedgerLivePreference() {
+    return this.store.getState().useLedgerLive;
+  }
+
   //
   // PRIVATE METHODS
   //
@@ -677,6 +698,31 @@ export default class PreferencesController {
       const { tokens, hiddenTokens } = this._getTokenRelatedStates();
       this._updateAccountTokens(tokens, this.getAssetImages(), hiddenTokens);
     });
+  }
+
+  _subscribeToInfuraAvailability() {
+    this.network.on(NETWORK_EVENTS.INFURA_IS_BLOCKED, () => {
+      this._setInfuraBlocked(true);
+    });
+    this.network.on(NETWORK_EVENTS.INFURA_IS_UNBLOCKED, () => {
+      this._setInfuraBlocked(false);
+    });
+  }
+
+  /**
+   *
+   * A setter for the `infuraBlocked` property
+   * @param {boolean} isBlocked - Bool indicating whether Infura is blocked
+   *
+   */
+  _setInfuraBlocked(isBlocked) {
+    const { infuraBlocked } = this.store.getState();
+
+    if (infuraBlocked === isBlocked) {
+      return;
+    }
+
+    this.store.updateState({ infuraBlocked: isBlocked });
   }
 
   /**
@@ -793,9 +839,14 @@ export default class PreferencesController {
     if (typeof symbol !== 'string') {
       throw ethErrors.rpc.invalidParams(`Invalid symbol: not a string.`);
     }
-    if (!(symbol.length < 7)) {
+    if (!(symbol.length > 0)) {
       throw ethErrors.rpc.invalidParams(
-        `Invalid symbol "${symbol}": longer than 6 characters.`,
+        `Invalid symbol "${symbol}": shorter than a character.`,
+      );
+    }
+    if (!(symbol.length < 12)) {
+      throw ethErrors.rpc.invalidParams(
+        `Invalid symbol "${symbol}": longer than 11 characters.`,
       );
     }
     const numDecimals = parseInt(decimals, 10);
