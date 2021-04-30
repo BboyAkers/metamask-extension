@@ -83,7 +83,7 @@ function runInChildProcess(task) {
     );
     // await end of process
     await new Promise((resolve, reject) => {
-      childProcess.once('exit', (errCode) => {
+      childProcess.once('close', (errCode) => {
         if (errCode !== 0) {
           reject(
             new Error(

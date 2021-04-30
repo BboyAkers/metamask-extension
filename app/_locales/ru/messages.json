@@ -43,6 +43,9 @@
   "activityLog": {
     "message": "Журнал активности"
   },
+  "addAccount": {
+    "message": "Добавить счет"
+  },
   "addAcquiredTokens": {
     "message": "Добавьте токены, которые вы приобрели с помощью MetaMask"
   },
@@ -116,6 +119,10 @@
   },
   "amount": {
     "message": "Сумма"
+  },
+  "amountInEth": {
+    "message": "$1 ETH",
+    "description": "Displays an eth amount to the user. $1 is a decimal number"
   },
   "amountWithColon": {
     "message": "Сумма:"
@@ -491,6 +498,9 @@
   "done": {
     "message": "Выполнено"
   },
+  "dontHaveAHardwareWallet": {
+    "message": "У вас нет аппаратного кошелька?"
+  },
   "dontShowThisAgain": {
     "message": "Больше не показывать это сообщение"
   },
@@ -715,6 +725,9 @@
     "message": "Получите Ether из крана для $1",
     "description": "Displays network name for Ether faucet"
   },
+  "getHelp": {
+    "message": "Получить справку."
+  },
   "getStarted": {
     "message": "Начать работу"
   },
@@ -735,6 +748,9 @@
   },
   "hardwareWalletsMsg": {
     "message": "Выберите аппаратный кошелек, который вы хотите использовать с MetaMask"
+  },
+  "havingTroubleConnecting": {
+    "message": "Проблемы с подключением?"
   },
   "here": {
     "message": "здесь",
@@ -769,12 +785,21 @@
   "importAccountSeedPhrase": {
     "message": "Импортировать счет с исходной фразой"
   },
+  "importUsingSeed": {
+    "message": "Импортировать с использованием исходной фразы счета"
+  },
   "importWallet": {
     "message": "Импортировать кошелек"
+  },
+  "importYourExisting": {
+    "message": "Импортируйте существующий кошелек, используя начальную фразу из 12 слов"
   },
   "imported": {
     "message": "Импортированный",
     "description": "status showing that an account has been fully loaded into the keyring"
+  },
+  "infoHelp": {
+    "message": "Информация и справка"
   },
   "initialTransactionConfirmed": {
     "message": "Ваша первоначальная транзакция была подтверждена сетью. Нажмите ОК, чтобы вернуться."
@@ -963,6 +988,12 @@
   "myAccounts": {
     "message": "Мои счета"
   },
+  "myWalletAccounts": {
+    "message": "Счета моего кошелька"
+  },
+  "myWalletAccountsDescription": {
+    "message": "Все ваши счета, созданные в MetaMask, будут автоматически добавлены в этот раздел."
+  },
   "needEtherInWallet": {
     "message": "Для взаимодействия с децентрализованными приложениями с помощью MetaMask вам понадобится Ether в вашем кошельке."
   },
@@ -1099,6 +1130,9 @@
   "optionalCurrencySymbol": {
     "message": "Символ валюты (необязательно)"
   },
+  "orderOneHere": {
+    "message": "Закажите Trezor или Ledger и храните свои средства в холодном хранилище"
+  },
   "origin": {
     "message": "Источник"
   },
@@ -1180,6 +1214,9 @@
   "readdToken": {
     "message": "Вы можете снова добавить этот токен в будущем, выбрав «Добавить токен» в меню опций вашего счета."
   },
+  "readyToConnect": {
+    "message": "Готовы подключиться?"
+  },
   "receive": {
     "message": "Получить"
   },
@@ -1239,6 +1276,9 @@
   },
   "restoreAccountWithSeed": {
     "message": "Восстановите свой счет с помощью исходной фразы"
+  },
+  "restoreFromSeed": {
+    "message": "Восстановить счет?"
   },
   "restoreWalletPreferences": {
     "message": "Найдена резервная копия ваших данных из $1. Хотите восстановить настройки кошелька?",
@@ -1310,6 +1350,9 @@
   "secretBackupPhraseWarning": {
     "message": "ПРЕДУПРЕЖДЕНИЕ: Никогда не разглашайте резервную фразу. Любой, у кого есть эта фраза, может забрать ваш Ether навсегда."
   },
+  "secretPhrase": {
+    "message": "Введите здесь свою секретную фразу из двенадцати слов, чтобы восстановить свой сейф."
+  },
   "securityAndPrivacy": {
     "message": "Безопасность и конфиденциальность"
   },
@@ -1360,6 +1403,9 @@
   },
   "sendAmount": {
     "message": "Отправить сумму"
+  },
+  "sendETH": {
+    "message": "Отправить ETH"
   },
   "sendSpecifiedTokens": {
     "message": "Отправить $1",
@@ -1480,6 +1526,24 @@
   "statusNotConnected": {
     "message": "Не подключен"
   },
+  "step1HardwareWallet": {
+    "message": "1. Подключить аппаратный кошелек"
+  },
+  "step1HardwareWalletMsg": {
+    "message": "Подключите свой аппаратный кошелек напрямую к компьютеру."
+  },
+  "step2HardwareWallet": {
+    "message": "2. Выберите счет"
+  },
+  "step2HardwareWalletMsg": {
+    "message": "Выберите желаемый счет для просмотра. Вы можете выбирать только по одному."
+  },
+  "step3HardwareWallet": {
+    "message": "3. Начните использовать сайты web3 и другое!"
+  },
+  "step3HardwareWalletMsg": {
+    "message": "Используйте свой аппаратный счет, как обычный счет Ethereum. Подключайтесь к сайтам web3, отправляйте ETH, покупайте и храните токены ERC20 и незаменяемые токены, такие как CryptoKitties."
+  },
   "storePhrase": {
     "message": "Сохраните эту фразу в диспетчере паролей, например в 1Password."
   },
@@ -1567,6 +1631,24 @@
   "swapHighSlippageWarning": {
     "message": "Величина проскальзывания очень велика. Убедитесь, что вы знаете, что делаете!"
   },
+  "swapIntroLearnMoreHeader": {
+    "message": "Хотите узнать больше?"
+  },
+  "swapIntroLearnMoreLink": {
+    "message": "Подробнее о свопах MetaMask"
+  },
+  "swapIntroLiquiditySourcesLabel": {
+    "message": "Источники ликвидности включают:"
+  },
+  "swapIntroPopupSubTitle": {
+    "message": "Теперь вы можете обменивать токены прямо в кошельке MetaMask. MetaMask Swaps объединяет несколько децентрализованных агрегаторов обменов, профессиональных торговцев и отдельные DEX, чтобы пользователи MetaMask всегда получали лучшую цену с минимальными комиссиями сети."
+  },
+  "swapIntroPopupTitle": {
+    "message": "Обмен токенов здесь!"
+  },
+  "swapLearnMoreContractsAuditReview": {
+    "message": "Ознакомьтесь с нашим официальным аудитом контрактов"
+  },
   "swapLowSlippageError": {
     "message": "Транзакции могут завершиться неудачей, максимальное проскальзывание слишком мало."
   },
@@ -1588,7 +1670,7 @@
     "description": "Provides information about the fee that metamask takes for swaps. $1 is a decimal number."
   },
   "swapNetworkFeeSummary": {
-    "message": "Сетевая комиссия покрывает стоимость обработки вашего свопа и его хранения в сети $1. MetaMask не получает прибыли от этой комиссии."
+    "message": "Сетевая комиссия покрывает стоимость обработки вашего свопа и его хранения в сети Ethereum. MetaMask не получает прибыли от этой комиссии."
   },
   "swapNewQuoteIn": {
     "message": "Новые котировки в $1",
@@ -1669,6 +1751,9 @@
   "swapSourceInfo": {
     "message": "Мы ищем несколько источников ликвидности (биржи, агрегаторы и профессиональные продавцы), чтобы найти лучшие цены и самые низкие сетевые комиссии."
   },
+  "swapStartSwapping": {
+    "message": "Начать обмен"
+  },
   "swapSwapFrom": {
     "message": "Своп с"
   },
@@ -1696,8 +1781,7 @@
     "message": "Неизвестный"
   },
   "swapVerifyTokenExplanation": {
-    "message": "Несколько токенов могут использовать одно и то же имя и символ. Проверьте $1, чтобы убедиться, что это именно тот токен, который вы ищете.",
-    "description": "This appears in a tooltip next to the verifyThisTokenOn message. It gives the user more information about why they should check the token on a block explorer. $1 will be the name or url of the block explorer, which will be the translation of 'etherscan' or a block explorer url specified for a custom network."
+    "message": "Несколько токенов могут использовать одно и то же имя и символ. Проверьте Etherscan, чтобы убедиться, что это именно тот токен, который вы ищете."
   },
   "swapViewToken": {
     "message": "Просмотреть $1"
@@ -1797,6 +1881,9 @@
   },
   "tokenContractAddress": {
     "message": "Адрес контракта токена"
+  },
+  "tokenOptions": {
+    "message": "Опции токена"
   },
   "tokenSymbol": {
     "message": "Символ токена"

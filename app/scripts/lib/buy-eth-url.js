@@ -1,26 +1,18 @@
-import {
-  GOERLI_CHAIN_ID,
-  KOVAN_CHAIN_ID,
-  MAINNET_CHAIN_ID,
-  RINKEBY_CHAIN_ID,
-  ROPSTEN_CHAIN_ID,
-} from '../../../shared/constants/network';
-
 /**
  * Gives the caller a url at which the user can acquire eth, depending on the network they are in
  *
  * @param {Object} opts - Options required to determine the correct url
- * @param {string} opts.chainId - The chainId for which to return a url
- * @param {string} opts.address - The address the bought ETH should be sent to.  Only relevant if chainId === '0x1'.
- * @returns {string|undefined} The url at which the user can access ETH, while in the given chain. If the passed
- * chainId does not match any of the specified cases, or if no chainId is given, returns undefined.
+ * @param {string} opts.network - The network for which to return a url
+ * @param {string} opts.address - The address the bought ETH should be sent to.  Only relevant if network === '1'.
+ * @returns {string|undefined} The url at which the user can access ETH, while in the given network. If the passed
+ * network does not match any of the specified cases, or if no network is given, returns undefined.
  *
  */
-export default function getBuyEthUrl({ chainId, address, service }) {
+export default function getBuyEthUrl({ network, address, service }) {
   // default service by network if not specified
   if (!service) {
     // eslint-disable-next-line no-param-reassign
-    service = getDefaultServiceForChain(chainId);
+    service = getDefaultServiceForNetwork(network);
   }
 
   switch (service) {
@@ -41,21 +33,21 @@ export default function getBuyEthUrl({ chainId, address, service }) {
   }
 }
 
-function getDefaultServiceForChain(chainId) {
-  switch (chainId) {
-    case MAINNET_CHAIN_ID:
+function getDefaultServiceForNetwork(network) {
+  switch (network) {
+    case '1':
       return 'wyre';
-    case ROPSTEN_CHAIN_ID:
+    case '3':
       return 'metamask-faucet';
-    case RINKEBY_CHAIN_ID:
+    case '4':
       return 'rinkeby-faucet';
-    case KOVAN_CHAIN_ID:
+    case '42':
       return 'kovan-faucet';
-    case GOERLI_CHAIN_ID:
+    case '5':
       return 'goerli-faucet';
     default:
       throw new Error(
-        `No default cryptocurrency exchange or faucet for chainId: "${chainId}"`,
+        `No default cryptocurrency exchange or faucet for networkId: "${network}"`,
       );
   }
 }

@@ -5,7 +5,7 @@ import createBlockCacheMiddleware from 'eth-json-rpc-middleware/block-cache';
 import createInflightMiddleware from 'eth-json-rpc-middleware/inflight-cache';
 import createBlockTrackerInspectorMiddleware from 'eth-json-rpc-middleware/block-tracker-inspector';
 import providerFromMiddleware from 'eth-json-rpc-middleware/providerFromMiddleware';
-import { PollingBlockTracker } from 'eth-block-tracker';
+import BlockTracker from 'eth-block-tracker';
 
 const inTest = process.env.IN_TEST === 'true';
 const blockTrackerOpts = inTest ? { pollingInterval: 1000 } : {};
@@ -16,7 +16,7 @@ const getTestMiddlewares = () => {
 export default function createJsonRpcClient({ rpcUrl, chainId }) {
   const fetchMiddleware = createFetchMiddleware({ rpcUrl });
   const blockProvider = providerFromMiddleware(fetchMiddleware);
-  const blockTracker = new PollingBlockTracker({
+  const blockTracker = new BlockTracker({
     ...blockTrackerOpts,
     provider: blockProvider,
   });

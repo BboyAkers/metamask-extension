@@ -43,6 +43,9 @@
   "activityLog": {
     "message": "活动日志"
   },
+  "addAccount": {
+    "message": "添加一个账户"
+  },
   "addAcquiredTokens": {
     "message": "在 MetaMask 上添加获得的代币"
   },
@@ -122,6 +125,10 @@
   },
   "amount": {
     "message": "数额"
+  },
+  "amountInEth": {
+    "message": "$1 ETH",
+    "description": "Displays an eth amount to the user. $1 is a decimal number"
   },
   "amountWithColon": {
     "message": "数额："
@@ -500,6 +507,9 @@
   "done": {
     "message": "完成"
   },
+  "dontHaveAHardwareWallet": {
+    "message": "没有硬件钱包？"
+  },
   "dontShowThisAgain": {
     "message": "不再显示"
   },
@@ -724,6 +734,9 @@
     "message": "从水管获取 $1 网络的 Ether",
     "description": "Displays network name for Ether faucet"
   },
+  "getHelp": {
+    "message": "获取帮助。"
+  },
   "getStarted": {
     "message": "开始使用"
   },
@@ -744,6 +757,9 @@
   },
   "hardwareWalletsMsg": {
     "message": "选择希望用于 MetaMask 的硬件钱包"
+  },
+  "havingTroubleConnecting": {
+    "message": "连接出现问题？"
   },
   "here": {
     "message": "这里",
@@ -778,12 +794,21 @@
   "importAccountSeedPhrase": {
     "message": "使用账户助记词导入账户"
   },
+  "importUsingSeed": {
+    "message": "使用账户助记词导入"
+  },
   "importWallet": {
     "message": "导入钱包"
+  },
+  "importYourExisting": {
+    "message": "使用 12 个单词的账户助记词导入您现有的钱包账户。"
   },
   "imported": {
     "message": "已导入",
     "description": "status showing that an account has been fully loaded into the keyring"
+  },
+  "infoHelp": {
+    "message": "信息 & 帮助"
   },
   "initialTransactionConfirmed": {
     "message": "您的初始交易已通过网络确认。请点击“确定”返回。"
@@ -975,6 +1000,12 @@
   "myAccounts": {
     "message": "我的账户"
   },
+  "myWalletAccounts": {
+    "message": "我的钱包账户"
+  },
+  "myWalletAccountsDescription": {
+    "message": "所有创建的 MetaMask 账户将自动添加到此部分。"
+  },
   "needEtherInWallet": {
     "message": "使用 MetaMask 与分布式应用交互，需要您的钱包里需要有 Ether。"
   },
@@ -1108,6 +1139,9 @@
   "optionalCurrencySymbol": {
     "message": "符号（选填）"
   },
+  "orderOneHere": {
+    "message": "订购 Trezor 或 Ledger ，将个人资金进行冷存储"
+  },
   "origin": {
     "message": "来源"
   },
@@ -1189,6 +1223,9 @@
   "readdToken": {
     "message": "之后您还可以通过帐户选项菜单中的“添加代币”来添加此代币。"
   },
+  "readyToConnect": {
+    "message": "是否准备连接？"
+  },
   "receive": {
     "message": "接收"
   },
@@ -1248,6 +1285,9 @@
   },
   "restoreAccountWithSeed": {
     "message": "使用账户助记词恢复您的账户"
+  },
+  "restoreFromSeed": {
+    "message": "从助记词还原"
   },
   "restoreWalletPreferences": {
     "message": "已找到于 $1 的数据备份。您想恢复您的钱包设置吗？",
@@ -1319,6 +1359,9 @@
   "secretBackupPhraseWarning": {
     "message": "警告：切勿向他人透露您的账户助记词。任何人一旦持有该账户助记词，即可控制您的 Ether。"
   },
+  "secretPhrase": {
+    "message": "输入 12 个单词组成的账户助记词恢复您的账户。"
+  },
   "securityAndPrivacy": {
     "message": "安全与隐私"
   },
@@ -1369,6 +1412,9 @@
   },
   "sendAmount": {
     "message": "发送数额"
+  },
+  "sendETH": {
+    "message": "发送 ETH"
   },
   "sendSpecifiedTokens": {
     "message": "发送 $1",
@@ -1489,6 +1535,24 @@
   "statusNotConnected": {
     "message": "未连接"
   },
+  "step1HardwareWallet": {
+    "message": "1. 连接硬件钱包"
+  },
+  "step1HardwareWalletMsg": {
+    "message": "将您的硬件钱包直接连接到电脑上。"
+  },
+  "step2HardwareWallet": {
+    "message": "2. 选择账户"
+  },
+  "step2HardwareWalletMsg": {
+    "message": "请选择您想查看的账户。每次只能选择一个账户。"
+  },
+  "step3HardwareWallet": {
+    "message": "3. 开始使用 web3 站点和更多功能！"
+  },
+  "step3HardwareWalletMsg": {
+    "message": "使用您的硬件钱包，操作与以太坊账户制作相同。登录 dApps，发送 ETH ，购买和保存 ERC20 代币和诸如 CryptoKitties 等不可替代代币。"
+  },
   "storePhrase": {
     "message": "通过如 1Password 等密码管理工具保存该账户助记词。"
   },
@@ -1579,6 +1643,24 @@
   "swapHighSlippageWarning": {
     "message": "滑点数量非常大。确保您知道您的操作！"
   },
+  "swapIntroLearnMoreHeader": {
+    "message": "想了解更多信息？"
+  },
+  "swapIntroLearnMoreLink": {
+    "message": "了解更多关于 MetaMask Swap（兑换）"
+  },
+  "swapIntroLiquiditySourcesLabel": {
+    "message": "流动资金来源包括："
+  },
+  "swapIntroPopupSubTitle": {
+    "message": "现在您可以直接在 MetaMask 钱包中兑换代币。MetaMask Swaps（兑换）结合了多个去中心化交易所聚合商、专业做市商和个人 DEX，确保 MetaMask 用户始终以最低的网络费用获得最佳价格。"
+  },
+  "swapIntroPopupTitle": {
+    "message": "代币兑换来了！"
+  },
+  "swapLearnMoreContractsAuditReview": {
+    "message": "查看我们的官方合约审计"
+  },
   "swapLowSlippageError": {
     "message": "交易可能失败，最大滑点过低。"
   },
@@ -1604,7 +1686,7 @@
     "description": "$1 is the number of quotes that the user can select from when opening the list of quotes on the 'view quote' screen"
   },
   "swapNetworkFeeSummary": {
-    "message": "网络手续费包括处理您的兑换和在以太坊（$1）网络上存储的成本。MetaMask 不从这笔费用中获利。"
+    "message": "网络手续费包括处理您的兑换和在以太坊（Ethereum）网络上存储的成本。MetaMask 不从这笔费用中获利。"
   },
   "swapNewQuoteIn": {
     "message": "$1 后更新报价",
@@ -1699,6 +1781,9 @@
   "swapSourceInfo": {
     "message": "我们搜索多个流动性来源（交易所、聚合商和专业做市商），以找到最好的利率和最低的网络手续费。"
   },
+  "swapStartSwapping": {
+    "message": "开始兑换"
+  },
   "swapSwapFrom": {
     "message": "兑换自"
   },
@@ -1729,8 +1814,7 @@
     "message": "使用最好的报价"
   },
   "swapVerifyTokenExplanation": {
-    "message": "多个代币可以使用相同的名称和符号。检查 $1（以太坊浏览器）以确认这是您正在寻找的代币。",
-    "description": "This appears in a tooltip next to the verifyThisTokenOn message. It gives the user more information about why they should check the token on a block explorer. $1 will be the name or url of the block explorer, which will be the translation of 'etherscan' or a block explorer url specified for a custom network."
+    "message": "多个代币可以使用相同的名称和符号。检查 Etherscan（以太坊浏览器）以确认这是您正在寻找的代币。"
   },
   "swapViewToken": {
     "message": "查看 $1"
@@ -1833,6 +1917,9 @@
   },
   "tokenContractAddress": {
     "message": "代币合约地址"
+  },
+  "tokenOptions": {
+    "message": "代币选项"
   },
   "tokenSymbol": {
     "message": "代币符号"

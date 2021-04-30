@@ -1,5 +1,5 @@
 import punycode from 'punycode/punycode';
-import { toChecksumAddress } from 'ethereumjs-util';
+import ethUtil from 'ethereumjs-util';
 import { ObservableStore } from '@metamask/obs-store';
 import log from 'loglevel';
 import { CHAIN_ID_TO_NETWORK_ID_MAP } from '../../../../shared/constants/network';
@@ -43,7 +43,7 @@ export default class EnsController {
   }
 
   reverseResolveAddress(address) {
-    return this._reverseResolveAddress(toChecksumAddress(address));
+    return this._reverseResolveAddress(ethUtil.toChecksumAddress(address));
   }
 
   async _reverseResolveAddress(address) {
@@ -79,7 +79,7 @@ export default class EnsController {
       return undefined;
     }
 
-    if (toChecksumAddress(registeredAddress) !== address) {
+    if (ethUtil.toChecksumAddress(registeredAddress) !== address) {
       return undefined;
     }
 
