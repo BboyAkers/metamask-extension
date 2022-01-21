@@ -3,6 +3,7 @@ import ethAccounts from './eth-accounts';
 import getProviderState from './get-provider-state';
 import logWeb3ShimUsage from './log-web3-shim-usage';
 import requestAccounts from './request-accounts';
+import revokePermissions from './revoke-permissions';
 import sendMetadata from './send-metadata';
 import switchEthereumChain from './switch-ethereum-chain';
 import watchAsset from './watch-asset';
@@ -13,6 +14,7 @@ const handlers = [
   getProviderState,
   logWeb3ShimUsage,
   requestAccounts,
+  revokePermissions,
   sendMetadata,
   switchEthereumChain,
   watchAsset,
