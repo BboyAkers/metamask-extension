@@ -11,11 +11,26 @@ import {
   getNumberOfSettingsInSection,
   handleSettingsRefs,
 } from '../../../helpers/utils/settings-search';
+import AddNewContactPopover from '../../../components/app/add-new-contact-popover';
 import EditContact from './edit-contact';
 import AddContact from './add-contact';
 import ViewContact from './view-contact';
 
 export default class ContactListTab extends Component {
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      isAddNewContactPopoverOpen: false,
+    };
+    this.setIsAddNewContactPopoverOpen = this.setIsAddNewContactPopoverOpen.bind(
+      this,
+    );
+  }
+
+  setIsAddNewContactPopoverOpen(isOpen) {
+    this.setState({ isAddNewContactPopoverOpen: isOpen });
+  }
+
   static contextTypes = {
     t: PropTypes.func,
   };
@@ -83,7 +98,7 @@ export default class ContactListTab extends Component {
           <button
             className="address-book__link"
             onClick={() => {
-              history.push(CONTACT_ADD_ROUTE);
+              this.setIsAddNewContactPopoverOpen(true);
             }}
           >
             + {t('addContact')}
@@ -150,9 +165,15 @@ export default class ContactListTab extends Component {
 
     if (!hideAddressBook) {
       return (
-        <div ref={this.settingsRefs[0]} className="address-book">
-          {this.renderAddresses()}
-        </div>
+        <>
+          {this.state.isAddNewContactPopoverOpen ? (
+            <AddNewContactPopover isOpen={this.setIsAddNewContactPopoverOpen} />
+          ) : (
+            <div ref={this.settingsRefs[0]} className="address-book">
+              {this.renderAddresses()}
+            </div>
+          )}
+        </>
       );
     }
     return null;
