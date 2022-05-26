@@ -1,0 +1,53 @@
+.add-new-contact-popover {
+
+  &__container {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 1.5rem;
+  }
+
+  &__header__title {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
+  &__header__subtitle {
+    font-size: 1rem;
+    padding-top: .5rem;
+  }
+
+  &__group {
+    display: flex;
+    flex-flow: column nowrap;
+    padding-top: 1.5rem;
+
+    &__label {
+      font-weight: 600;
+    }
+  }
+
+  &__input-text {
+    margin-top: 8px;
+  }
+
+  &__textarea {
+    @include Paragraph;
+
+    /*rtl:ignore*/
+    direction: ltr;
+    border: 1px solid #cdcdcd;
+    border-radius: 6px;
+    background-color: #fff;
+    padding: 16px;
+    margin-top: 8px;
+    resize: none;
+  }
+
+  &__textarea::placeholder {
+    opacity: 0.42;
+    transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; 
+  }
+  &__textarea:focus {
+    border: 1px solid #2f9ae0; 
+  }
+}

@@ -121,6 +121,9 @@
   "addAlias": {
     "message": "Add alias"
   },
+  "addAnEthereumAddress": {
+    "message": "Add an Ethereum address"
+  },
   "addContact": {
     "message": "Add contact"
   },
