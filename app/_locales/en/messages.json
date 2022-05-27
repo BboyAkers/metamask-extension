@@ -404,6 +404,9 @@
   "builtAroundTheWorld": {
     "message": "MetaMask is designed and built around the world."
   },
+  "burnAddress": {
+    "message": "This is a burn address. You can't send to it."
+  },
   "busy": {
     "message": "Busy"
   },
@@ -2027,6 +2030,9 @@
   },
   "newContact": {
     "message": "New Contact"
+  },
+  "newContactSubtitle": {
+    "message": "Enter contact details."
   },
   "newContract": {
     "message": "New Contract"
