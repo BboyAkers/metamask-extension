@@ -1,14 +1,12 @@
-import React, { useContext, useState, useCallback } from 'react';
+import React, { useContext, useState } from 'react';
+import { providers } from 'ethers';
+import { isValidAddress } from 'ethereumjs-util';
 import PropTypes from 'prop-types';
 import Button from '../../ui/button';
 import Popover from '../../ui/popover';
 import TextField from '../../ui/text-field';
 import { ENVIRONMENT_TYPE_FULLSCREEN } from '../../../../shared/constants/app';
 import { getEnvironmentType } from '../../../../app/scripts/lib/util';
-import { isValidAddress } from 'ethereumjs-util';
-import { providers } from 'ethers';
-import { debounce } from 'lodash';
-
 import { I18nContext } from '../../../contexts/i18n';
 import { isValidDomainName } from '../../../helpers/utils/util';
 import { isBurnAddress } from '../../../../shared/modules/hexstring-utils';
@@ -17,9 +15,13 @@ const environmentType = getEnvironmentType();
 
 const isFullScreen = environmentType === ENVIRONMENT_TYPE_FULLSCREEN;
 
+const submitContact = async (userName, ethereumAddress, memo) => {
+  console.log(userName, ethereumAddress, memo);
+};
+
 const AddNewContactPopoverFooter = (props) => {
   const t = useContext(I18nContext);
-  const { isOpen } = props;
+  const { isOpen, userName, ethereumAddress, memo, addToAddressBook } = props;
   return (
     <>
       <Button
@@ -36,9 +38,10 @@ const AddNewContactPopoverFooter = (props) => {
       <Button
         type="primary"
         className="update-nickname__save"
-        onClick={(e) => {
+        onSubmit={async (e) => {
           e.preventDefault();
-          isOpen(false);
+          submitContact(userName, ethereumAddress, memo);
+          await addToAddressBook(ethereumAddress, userName, memo);
         }}
         rounded
       >
@@ -51,7 +54,7 @@ const AddNewContactPopoverFooter = (props) => {
 const AddNewContactPopover = (props) => {
   const t = useContext(I18nContext);
 
-  const [username, setUsername] = useState('');
+  const [userName, setUserName] = useState('');
   const [ethereumAddress, setEthereumAddress] = useState('');
   const [ethereumAddressError, setEthereumAddressError] = useState('');
   const [memo, setMemo] = useState('');
@@ -76,7 +79,7 @@ const AddNewContactPopover = (props) => {
         const ensHexAddress = await provider.resolveName(ethAddress);
         setEthereumAddressError('');
         setEthereumAddress(ensHexAddress);
-        setUsername((name) => name || ethAddress);
+        setUserName((name) => name || ethAddress);
       } catch (error) {
         setEthereumAddressError(error.message);
       }
@@ -86,8 +89,8 @@ const AddNewContactPopover = (props) => {
     }
   };
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
+  const handleUserNameChange = (event) => {
+    setUserName(event.target.value);
   };
 
   const handleEthereumAddressChange = (event) => {
@@ -99,8 +102,19 @@ const AddNewContactPopover = (props) => {
   };
 
   const { isOpen } = props;
+  const { addToAddressBook } = props;
   return (
-    <Popover footer={<AddNewContactPopoverFooter isOpen={isOpen} />}>
+    <Popover
+      footer={
+        <AddNewContactPopoverFooter
+          isOpen={isOpen}
+          userName={userName}
+          ethereumAddress={ethereumAddress}
+          memo={memo}
+          addToAddressBook={addToAddressBook}
+        />
+      }
+    >
       <div className="add-new-contact-popover__container">
         <h2 className="add-new-contact-popover__header__title">
           {t('newContact')}
@@ -114,8 +128,8 @@ const AddNewContactPopover = (props) => {
               {t('userName')}
             </label>
             <TextField
-              value={username}
-              onChange={handleUsernameChange}
+              value={userName}
+              onChange={handleUserNameChange}
               placeholder={isFullScreen ? '' : t('userName')}
             />
           </div>
@@ -154,9 +168,14 @@ const AddNewContactPopover = (props) => {
 
 AddNewContactPopoverFooter.propTypes = {
   isOpen: PropTypes.func,
+  userName: PropTypes.string,
+  ethereumAddress: PropTypes.string,
+  memo: PropTypes.string,
+  addToAddressBook: PropTypes.func,
 };
 AddNewContactPopover.propTypes = {
   isOpen: PropTypes.func,
+  addToAddressBook: PropTypes.func,
 };
 
 export default AddNewContactPopover;
